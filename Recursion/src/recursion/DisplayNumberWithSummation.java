@@ -1,5 +1,7 @@
 package recursion;
 
+//In this program we have to add n natural number and also we have to show the number in series form.
+
 public class DisplayNumberWithSummation {
 	
 	//method to perform this task
@@ -13,7 +15,7 @@ public class DisplayNumberWithSummation {
 	//main method
 	public static void main(String[] args) {
 		
-		System.out.println("\b\b = "+dsum(10));
+		System.out.printf("\b\b = "+dsum(10));
 	}
 
 }

@@ -1,3 +1,3 @@
 # Data Structures 
 
-Data structure using java.
+Data structures using java.

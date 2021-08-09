@@ -6,14 +6,14 @@ public class DisplayNumberWithSummation {
 	static int dsum(int n) {
 		if(n == 0)return 0;
 		int result =  n + dsum(n-1);
-		System.out.printf("%d + ", n);
+		System.out.print(n+" + ");
 		return result;
 	}
 	
 	//main method
 	public static void main(String[] args) {
 		
-		System.out.printf("= %d", dsum(10));
+		System.out.println("\b\b = "+dsum(10));
 	}
 
 }

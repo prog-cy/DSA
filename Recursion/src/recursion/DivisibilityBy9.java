@@ -3,16 +3,13 @@ package recursion;
 public class DivisibilityBy9 {
 	
 	//method to check Divisibility by 9
-	static boolean set;
 	static boolean divisibleBy9(long n) {
 		
-		int sumofdigits;
 		if(n == 9) {return true;}
 		
-		if(n<9) {return false;}
+		if(n < 9) {return false;}
 		
-		
-		sumofdigits = 0;
+		int sumofdigits = 0;
 		
 		while(n>0) {
 			
@@ -25,7 +22,19 @@ public class DivisibilityBy9 {
 	//main method
 	public static void main(String[] args) {
 		
-		System.out.println(divisibleBy9(1469358));
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		
+		System.out.println("Enter number which divisibility you want to check by 9: ");
+		int num = sc.nextInt();
+		
+		boolean isdivisible = divisibleBy9(num);
+		
+		if(isdivisible)
+			System.out.println(num + " is divisible by 9");
+		else
+			System.out.println(num + " is not divisible by 9");
+		sc.close();
+		
 	}
 
 }

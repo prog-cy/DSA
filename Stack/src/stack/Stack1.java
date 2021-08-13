@@ -75,7 +75,8 @@ public class Stack1 {
 		stk1.push(20);
 		stk1.push(30);
 		stk1.push(40);
-		
+		stk1.push(50);
+	
 		System.out.println("stack is");
 		stk1.display();
 		

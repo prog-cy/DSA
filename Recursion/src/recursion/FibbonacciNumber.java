@@ -16,11 +16,11 @@ public class FibbonacciNumber {
 		java.util.Scanner sc = new java.util.Scanner(System.in);
 		
 		System.out.println("Enter how many terms of fibonacci series you want: ");
-		int term = sc.nextInt();
+		int n = sc.nextInt();
 		sc.close();
 		
-		System.out.println("Fibonacci series having "+term+" terms");
-		for(int i = 0; i<term; i++){
+		System.out.println("Fibonacci series having "+n+" terms");
+		for(int i = 0; i<n; i++){
 			System.out.print(fib(i)+" ");
 		}
 	}

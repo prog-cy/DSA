@@ -1,6 +1,6 @@
 package stack;
 
-//In the class I will convert a infix expression to prefix expression
+//Program to convert infix expression to prefix expression
 import java.io.*;
 
 public class Stack5 {

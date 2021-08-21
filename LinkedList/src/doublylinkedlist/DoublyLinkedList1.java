@@ -154,6 +154,7 @@ public class DoublyLinkedList1 {
 		else {
 			Node current = head;
 			Node temp = null;
+			
 			while(current != null) {
 				temp = current.prev;
 				current.prev = current.next;

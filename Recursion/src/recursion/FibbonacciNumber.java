@@ -20,6 +20,7 @@ public class FibbonacciNumber {
 		sc.close();
 		
 		System.out.println("Fibonacci series having "+n+" terms");
+		
 		for(int i = 0; i<n; i++){
 			System.out.print(fib(i)+" ");
 		}

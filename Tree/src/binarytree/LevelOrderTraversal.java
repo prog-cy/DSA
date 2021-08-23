@@ -23,7 +23,7 @@ public class LevelOrderTraversal {
 		
 		if(root == null)return;
 		
-		else if(level == 1) {
+		else if(level == 0) {
 			
 			System.out.print(root.data+" ");
 			return;
@@ -45,7 +45,7 @@ public class LevelOrderTraversal {
 		
 		int h = getHeight(root);
 		
-		for(int i = 1; i<=h; i++)
+		for(int i = 0; i<h; i++)
 			printAtLevel(root, i);
 	}
 	

@@ -1,5 +1,6 @@
 package binarytree;
 
+//To search an element in binary tree
 
 public class BinaryTreeSearch {
 	
@@ -33,7 +34,18 @@ public class BinaryTreeSearch {
 		root.right.left = new Node(22);
 		root.right.right = new Node(33);
 		
-		System.out.println(search(root, 22));
+		java.util.Scanner sc = new java.util.Scanner(System.in);
+		
+		System.out.println("Enter data you want to search in the tree: ");
+		int key = sc.nextInt();
+		sc.close();
+		
+		if(search(root, key))
+			System.out.println(key+ " is present");
+		else
+			System.out.println(key+" is not present");
+		
+		
 		
 	}
 

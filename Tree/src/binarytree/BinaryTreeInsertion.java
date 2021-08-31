@@ -10,7 +10,7 @@ public class BinaryTreeInsertion {
 	static class Node{
 		
 		int data;
-		Node left, rigth;
+		Node left, right;
 		Node(int data){this.data = data;}
 	}
 	
@@ -33,12 +33,12 @@ public class BinaryTreeInsertion {
 			else
 				q.add(temp.left);
 			
-			if(temp.rigth == null) {
-				temp.rigth = new Node(data);
+			if(temp.right == null) {
+				temp.right = new Node(data);
 				return;
 			}
 			else
-				q.add(temp.rigth);
+				q.add(temp.right);
 		}
 	}
 	
@@ -54,9 +54,23 @@ public class BinaryTreeInsertion {
 			
 			System.out.print(temp.data+" ");
 			if(temp.left != null)q.add(temp.left);
-			if(temp.rigth != null) q.add(temp.rigth);
+			if(temp.right != null) q.add(temp.right);
 			
 		}
+	}
+	
+	//method to get the deepest right most element in the binary tree
+	static int getDeepestRightMostElement(Node root) {
+		
+		if(root.right == null) return root.data;
+		return getDeepestRightMostElement(root.right);
+	}
+	
+	//method to get the deepest left most element in the binary tree
+	static int getDeepestLeftMostElement(Node root) {
+		
+		if(root.left == null) return root.data;
+		return getDeepestLeftMostElement(root.left);
 	}
 	
 	//main method
@@ -66,10 +80,10 @@ public class BinaryTreeInsertion {
 		
 		Node root = new Node(10);
 		root.left = new Node(20);
-		root.rigth = new Node(30);
+		root.right = new Node(30);
 		root.left.left = new Node(40);
-		root.left.rigth = new Node(60);
-		root.rigth.left = new Node(50);
+		root.left.right = new Node(60);
+		root.right.left = new Node(50);
 		
 		System.out.print("Level order: ");
 		levelOrder(root);
@@ -80,7 +94,10 @@ public class BinaryTreeInsertion {
 		
 		System.out.print("\nLevel order: ");
 		levelOrder(root);
-			
+		
+		System.out.println("\nDeepest right most element in the Tree: "+getDeepestRightMostElement(root));
+		System.out.println("Deepest left most element in the Tree: "+getDeepestLeftMostElement(root));
+		
 	}
 
 }

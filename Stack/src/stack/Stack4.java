@@ -114,7 +114,7 @@ public class Stack4 {
 	public static void main(String[] args) {
 		
 		Stack4 stk1 = new Stack4();
-		String infix = "1+(2+4)+7*6/4";
+		String infix = "1+2-(3*5)";
 		String postfix = stk1.infixToPostfix(infix);
 		System.out.println(infix+" expression postfix : "+postfix);
 		int result = new PostFixEval().eval(postfix);

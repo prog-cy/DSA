@@ -2,6 +2,9 @@ package binarytree;
 import java.util.*;
 
 //In this class we will implement a tree using array
+//Tree must be complete binary tree
+//In Tree there should not be a empty space
+//We will put some different value at that place, which we don't want to fill
 
 public class ArrayImplementaionOfTree {
 	

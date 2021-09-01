@@ -126,7 +126,7 @@ public class Stack5 {
 			}    
 			else {
 				
-				while((prec(peek()) > prec(c)) || ((prec(peek()) >= prec(c)) && (c == '^')))
+				while((prec(peek()) > prec(c)) || ((prec(peek()) >= prec(c)) && (prec(c) == '^')))
 					postfix += pop();
 				push(c);
 			}
@@ -158,3 +158,5 @@ public class Stack5 {
 		System.out.println("Value of prefix expression "  + prefix +"  := "+new PreFixEval().eval(prefix));
 	}
 }
+
+

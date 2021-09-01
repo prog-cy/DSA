@@ -12,7 +12,7 @@ public class ShellSort {
 		
 		int i, j;
 		
-		int h = arr.length/2;
+		int h = arr.length/2;  
 		
 		while(h >= 1) {
 			

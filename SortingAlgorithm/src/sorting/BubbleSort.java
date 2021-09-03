@@ -2,7 +2,7 @@ package sorting;
 
 import java.util.Arrays;
 
-//In this class I am going to implement bubble sort algorithm
+
 //Time complexity of this algorithm is O(n^2).
 
 public class BubbleSort {

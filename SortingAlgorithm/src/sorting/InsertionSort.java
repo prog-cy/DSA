@@ -2,7 +2,7 @@ package sorting;
 
 import java.util.Arrays;
 
-//In this method I am going to implement Insertion Sort
+
 //Time complexity of this algorithm is O(n^2).
 
 public class InsertionSort {

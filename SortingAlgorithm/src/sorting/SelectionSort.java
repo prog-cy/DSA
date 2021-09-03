@@ -2,7 +2,7 @@ package sorting;
 
 import java.util.Arrays;
 
-//In this class I am going to implement the selection sort algorithm
+
 //Time complexity of Selection sort is O(n^2). 
 
 public class SelectionSort {

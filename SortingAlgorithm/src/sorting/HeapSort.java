@@ -61,11 +61,11 @@ public class HeapSort {
 	static void heapSort(int[] arr) {
 		
 		createHeap(arr);
-		int i = 0;
+		int i = arr.length - 1;
 		while(heap.size() != 1){
 			
 			arr[i] = delete();
-			i++;
+			i--;
 		}
 	}
 	

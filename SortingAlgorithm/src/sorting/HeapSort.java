@@ -38,7 +38,7 @@ public class HeapSort {
 		int i = 1;
 		while(i<heap.size()/2) {
 			
-            int max = heap.get(2*i) > heap.get(2*i + 1) ? 2*i : (2*i+1);
+            int max = heap.get(2*i) > heap.get(2*i + 1) ? 2*i : ((2*i)+1);
 			
 			int temp = heap.get(i);
 			heap.set(i, heap.get(max));

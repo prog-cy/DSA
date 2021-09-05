@@ -100,10 +100,6 @@ public class MaxHeap3 {
 		delete();
 		
 		System.out.print("Max Heap: ");
-		display();
-		
-		while(heap.size() != 1)
-			delete();
-	
+		display();	
 	}
 }

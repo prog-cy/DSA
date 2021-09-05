@@ -79,6 +79,7 @@ public class HeapSort {
         int[] arr = {10, 5, 6, 20, 24, 78, 90, 12, 1, 23};
 		
         System.out.println("Array before sorting: "+Arrays.toString(arr));
+        
 		heapSort(arr);
 		
 		System.out.println("Array after sorting: "+Arrays.toString(arr));

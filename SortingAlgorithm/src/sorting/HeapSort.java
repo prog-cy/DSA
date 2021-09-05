@@ -71,21 +71,17 @@ public class HeapSort {
 		}
 	}
 	
-	static void display() {
-		
-		for(int i = 1; i<heap.size(); i++)
-			System.out.print(heap.get(i)+" ");
-	}
 	//main method
 	public static void main(String[] args) {
 		
-		heap.add(Integer.MAX_VALUE);
+		heap.add(Integer.MIN_VALUE);
 		
         int[] arr = {10, 5, 6, 20, 24, 78, 90, 12, 1, 23};
 		
+        System.out.println("Array before sorting: "+Arrays.toString(arr));
 		heapSort(arr);
 		
-		System.out.println(Arrays.toString(arr));
+		System.out.println("Array after sorting: "+Arrays.toString(arr));
 	
 	}
 

@@ -7,6 +7,7 @@ public class HeapSort {
 	
 	static ArrayList<Integer> heap = new ArrayList<>();
 	
+	//method to insert in the heap
 	static void insert(int key) {
 		
 		heap.add(key);
@@ -51,6 +52,7 @@ public class HeapSort {
 		
 	}
 	
+	//method to create the heap for the given array
 	static void createHeap(int[] arr) {
 		
 		for(int x : arr)

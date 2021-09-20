@@ -77,12 +77,26 @@ public class HeapSort {
 		heap.add(Integer.MIN_VALUE);
 		
         int[] arr = {10, 5, 6, 20, 24, 78, 90, 12, 1, 23};
-		
-        System.out.println("Array before sorting: "+Arrays.toString(arr));
         
-		heapSort(arr);
+        createHeap(arr);
+        
+        
+        
+        for(int i = 1; i<heap.size(); i++)
+        	System.out.print(heap.get(i)+" ");
+        
+        System.out.println("\n");
+        while(heap.size() != 1) {
+        	
+        	System.out.println(delete()+" ");
+        	System.out.println("Heap size: "+heap.size());
+        }
+        
+        //System.out.println("Array before sorting: "+Arrays.toString(arr));
+        
+		//heapSort(arr);
 		
-		System.out.println("Array after sorting: "+Arrays.toString(arr));
+		//System.out.println("Array after sorting: "+Arrays.toString(arr));
 	
 	}
 

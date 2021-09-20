@@ -1,6 +1,6 @@
 package heap;
 
-//Implementin Heap using static array 
+//Implementing Heap using static array 
 
 public class MaxHeap1 {
 	

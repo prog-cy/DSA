@@ -76,7 +76,7 @@ public class HeapSort {
 		
 		heap.add(Integer.MIN_VALUE);
 		
-        int[] arr = {0, 10, 5, 6, 20, 24, 78, 90, 12, 1, 23};
+        int[] arr = {10, 5, 6, 20, 24, 78, 90, 12, 1, 23};
 		
         System.out.println("Array before sorting: "+Arrays.toString(arr));
         

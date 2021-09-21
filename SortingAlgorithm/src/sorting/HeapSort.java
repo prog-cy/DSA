@@ -2,6 +2,8 @@ package sorting;
 
 import java.util.*;
 
+//Heap sort without heapify approach it takes more time than heapify approach but it is simple
+// and in this approach I have done exactly same what we do in real heap sort using pen and paper
 
 public class HeapSort {
 	
@@ -48,6 +50,8 @@ public class HeapSort {
             
             	i = max;
             }
+            else
+            	break;
 		}
 		
 		return del;
@@ -78,21 +82,7 @@ public class HeapSort {
 		
 		heap.add(Integer.MIN_VALUE);
 		
-        int[] arr = {10, 5, 6, 20, 24, 78, 90, 12, 1, 23};
-        
-//        createHeap(arr);
-//        
-//        
-//        
-//        for(int i = 1; i<heap.size(); i++)
-//        	System.out.print(heap.get(i)+" ");
-//        
-//        System.out.println("\n");
-//        while(heap.size() != 1) {
-//        	
-//        	System.out.println(delete()+" ");
-//        	System.out.println("Heap size: "+heap.size());
-//        }
+        int[] arr = {10, 5, 6, 20, 24, -9, 78, 90, 12, 1, 23};
         
         System.out.println("Array before sorting: "+Arrays.toString(arr));
         

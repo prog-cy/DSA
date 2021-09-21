@@ -5,7 +5,7 @@ import java.util.*;
 //Heap sort without heapify approach it takes more time than heapify approach but it is simple
 // and in this approach I have done exactly same what we do in real heap sort using pen and paper
 
-public class HeapSort {
+public class HeapSortWithoutHeapify {
 	
 	static ArrayList<Integer> heap = new ArrayList<>();
 	

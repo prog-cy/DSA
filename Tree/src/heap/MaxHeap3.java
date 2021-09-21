@@ -50,7 +50,7 @@ public class MaxHeap3 {
 				i = max;
 			}
 			else
-				return;
+				break;
 		}
 	}
 	

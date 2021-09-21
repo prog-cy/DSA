@@ -23,12 +23,36 @@ public class MaxHeap4 {
 			if(heap.get(parent) < heap.get(i)) {
 				
 				int temp = heap.get(parent);
-				
 				heap.set(parent, heap.get(i));
 				heap.set(i, temp);
 			}
 			
 			i = parent;
+		}
+	}
+	
+	//method to delete the root from the heap
+	static void delete() {
+		
+		System.out.print("\n"+heap.get(1)+" deleted");
+		heap.set(1, heap.get(heap.size() - 1));
+		heap.remove(heap.size() - 1);
+		
+		int i = 1;
+		
+		while(i < heap.size()/2) {
+			
+			int max = heap.get(2*i) > heap.get(2*i + 1) ? 2*i : ((2*i) + 1);
+			
+			if(heap.get(i) < heap.get(max)) {
+				
+				int temp = heap.get(i);
+				heap.set(i, heap.get(max));
+				heap.set(max, temp);
+				i = max;
+			}
+			else
+				break;
 		}
 	}
 	
@@ -50,11 +74,21 @@ public class MaxHeap4 {
 		insert(809);
 		insert(20);
 		insert(-10);
-		insert(117);
-		
+		insert(119);
 		
 		System.out.print("Level order traversal of the heap: ");
 		levelorder();
+		
+		delete();
+		
+		System.out.print("\nLevel order traversal of the heap: ");
+		levelorder();
+		
+		delete();
+		
+		while(heap.size() != 1)
+			delete();
+		
 	}
 
 }

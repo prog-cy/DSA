@@ -82,7 +82,7 @@ public class HeapSortWithoutHeapify {
 		
 		heap.add(Integer.MIN_VALUE);
 		
-        int[] arr = {10, 5, 6, 20, 24, -9, 78, 90, 12, 1, 23};
+        int[] arr = {10, 5, 6, 20, 24, -9, 78, 90,-10, 12, 1, 23};
         
         System.out.println("Array before sorting: "+Arrays.toString(arr));
         

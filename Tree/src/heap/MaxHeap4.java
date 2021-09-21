@@ -50,6 +50,7 @@ public class MaxHeap4 {
 		insert(809);
 		insert(20);
 		insert(-10);
+		insert(117);
 		
 		
 		System.out.print("Level order traversal of the heap: ");

@@ -43,11 +43,14 @@ public class MaxHeap3 {
 			
 			int max = heap.get(2*i) > heap.get(2*i + 1) ? 2*i : (2*i+1);
 			
-			int temp = heap.get(i);
-			heap.set(i, heap.get(max));
-			heap.set(max, temp);
-			
-			i++;
+			if(heap.get(i) < heap.get(max)) {
+				int temp = heap.get(i);
+				heap.set(i, heap.get(max));
+				heap.set(max, temp);
+				i = max;
+			}
+			else
+				return;
 		}
 	}
 	
@@ -101,5 +104,7 @@ public class MaxHeap3 {
 		
 		System.out.print("Max Heap: ");
 		display();	
+		
+		
 	}
 }

@@ -31,7 +31,7 @@ public class HeapSort {
 	
 	//method to delete the element from the heap
 	static int delete() {
-		
+	
 		int del = heap.get(1);
 		heap.set(1, heap.get(heap.size() - 1));
 		heap.remove(heap.size() - 1);
@@ -41,11 +41,13 @@ public class HeapSort {
 			
             int max = heap.get(2*i) > heap.get(2*i + 1) ? 2*i : ((2*i)+1);
 			
-			int temp = heap.get(i);
-			heap.set(i, heap.get(max));
-			heap.set(max, temp);
-			
-			i++;
+            if(heap.get(i) < heap.get(max)) {
+            	int temp = heap.get(i);
+            	heap.set(i, heap.get(max));
+            	heap.set(max, temp);
+            
+            	i = max;
+            }
 		}
 		
 		return del;
@@ -78,25 +80,25 @@ public class HeapSort {
 		
         int[] arr = {10, 5, 6, 20, 24, 78, 90, 12, 1, 23};
         
-        createHeap(arr);
+//        createHeap(arr);
+//        
+//        
+//        
+//        for(int i = 1; i<heap.size(); i++)
+//        	System.out.print(heap.get(i)+" ");
+//        
+//        System.out.println("\n");
+//        while(heap.size() != 1) {
+//        	
+//        	System.out.println(delete()+" ");
+//        	System.out.println("Heap size: "+heap.size());
+//        }
         
+        System.out.println("Array before sorting: "+Arrays.toString(arr));
         
-        
-        for(int i = 1; i<heap.size(); i++)
-        	System.out.print(heap.get(i)+" ");
-        
-        System.out.println("\n");
-        while(heap.size() != 1) {
-        	
-        	System.out.println(delete()+" ");
-        	System.out.println("Heap size: "+heap.size());
-        }
-        
-        //System.out.println("Array before sorting: "+Arrays.toString(arr));
-        
-		//heapSort(arr);
+		heapSort(arr);
 		
-		//System.out.println("Array after sorting: "+Arrays.toString(arr));
+		System.out.println("Array after sorting: "+Arrays.toString(arr));
 	
 	}
 

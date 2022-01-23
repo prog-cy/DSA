@@ -1,7 +1,7 @@
 package sorting;
 
-//In this program I will implement stable selection  sort 
-// Stable sorting algorithm are those which algorithm which preserved the relative ordering of 
+//In this program I have  implemented stable selection  sort 
+// Stable sorting algorithm are those sorting algorithm which preserved the relative ordering of 
 // duplicate elements.
 
 public class StableSelectionSort {

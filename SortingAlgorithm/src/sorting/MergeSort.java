@@ -7,18 +7,18 @@ import java.util.Arrays;
 public class MergeSort {
 	
 	//merging the two array 
-	static void merge(int[] arr,int[] temp, int low1, int mid, int up2) {
+	static void merge(int[] arr,int[] temp, int low, int mid, int up) {
 		
-		int i = low1, j = mid+1, k = low1;
+		int i = low, j = mid+1, k = low;
 		
-		while(i<=mid && j<=up2) {
+		while(i<=mid && j<=up) {
 			
-			temp[k++] = arr[i] >= arr[j] ? arr[i++] : arr[j++];
+			temp[k++] = arr[i] < arr[j] ? arr[i++] : arr[j++];
 		}
 		
 		while(i<=mid)
 			temp[k++] = arr[i++];
-		while(j<=up2)
+		while(j<=up)
 			temp[k++] = arr[j++];
 	
 	}
@@ -30,10 +30,15 @@ public class MergeSort {
 			arr[i] = temp[i];
 	}
 	
+	static boolean tempIsNotCreated = true;
+	static int[] temp;
 	//method for merge sort
 	static void mergeSort(int[] arr, int low, int up) {
 		
-		int[] temp = new int[arr.length];
+		if(tempIsNotCreated) {
+			temp = new int[arr.length];
+			tempIsNotCreated = false;
+		}
 		
 		if(low < up) {
 			
@@ -48,7 +53,7 @@ public class MergeSort {
 	//main method
 	public static void main(String[] args) {
 		
-		int[] arr = {10, 5, 6, 20, 24, 78, 90, 12, 1, 23, -20};
+		int[] arr = {10, 5, 6, 20, 24, 24, 78, 90, 12, 1, 23, -20};
 		
 		System.out.println("Array before sorting: "+Arrays.toString(arr));
 		

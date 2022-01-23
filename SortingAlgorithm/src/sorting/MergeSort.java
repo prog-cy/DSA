@@ -7,16 +7,16 @@ import java.util.Arrays;
 public class MergeSort {
 	
 	//merging the two array 
-	static void merge(int[] arr,int[] temp, int low1, int up1, int low2, int up2) {
+	static void merge(int[] arr,int[] temp, int low1, int mid, int up2) {
 		
-		int i = low1, j = low2, k = low1;
+		int i = low1, j = mid+1, k = low1;
 		
-		while(i<=up1 && j<=up2) {
+		while(i<=mid && j<=up2) {
 			
-			temp[k++] = arr[i] <= arr[j] ? arr[i++] : arr[j++];
+			temp[k++] = arr[i] >= arr[j] ? arr[i++] : arr[j++];
 		}
 		
-		while(i<=up1)
+		while(i<=mid)
 			temp[k++] = arr[i++];
 		while(j<=up2)
 			temp[k++] = arr[j++];
@@ -40,7 +40,7 @@ public class MergeSort {
 			int mid = (low + up)/2;
 			mergeSort(arr, low, mid);
 			mergeSort(arr, mid+1, up);
-			merge(arr, temp, low, mid, mid+1, up);
+			merge(arr, temp, low, mid, up);
 			copy(arr, temp, low, up);
 		}
 	}

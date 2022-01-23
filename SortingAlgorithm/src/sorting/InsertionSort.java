@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 
 //Time complexity of this algorithm is O(n^2).
+// It is In-Place sort
+// It is stable-sort
 
 public class InsertionSort {
 	

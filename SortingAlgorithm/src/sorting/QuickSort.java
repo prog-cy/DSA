@@ -4,16 +4,16 @@ import java.util.Arrays;
 
 //Time complexity in best case O(nlogn)
 //Time complexity in worst case O(n^2)
+
 public class QuickSort {
 	
 	//method for quick sort
 	static void quickSort(int[] arr, int low, int up) {
 		
-		int pivloc;
-		
 		if(low > up)
 			return;
-		pivloc = partition(arr, low, up);
+		
+		int pivloc = partition(arr, low, up);
 		quickSort(arr, low, pivloc-1);
 		quickSort(arr, pivloc+1, up);
 		

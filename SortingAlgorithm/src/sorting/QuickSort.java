@@ -1,6 +1,5 @@
 package sorting;
 
-import java.util.Arrays;
 
 //Time complexity in best case O(nlogn)
 //Time complexity in worst case O(n^2)
@@ -28,10 +27,10 @@ public class QuickSort {
 		
 		while(i <= j) {
 			
-			while(arr[i] < pivot && i<up)
+			while(arr[i]<pivot && i<up)
 				i++;
 			
-			while(arr[j] > pivot)
+			while(arr[j]>pivot)
 				j--;
 			
 			if(i<j) {
@@ -51,15 +50,34 @@ public class QuickSort {
 		return j;
 	}
 	
+	public static String printArray(int[] arr) {
+		
+		if(arr == null)
+			return "null";
+		int iMax = arr.length-1;
+		if(iMax == -1)
+			return "{}";
+		StringBuilder b = new StringBuilder();
+		b.append("{");
+		for(int i = 0; ; i++){
+			
+			b.append(arr[i]);
+			if(i == iMax)
+				 return b.append("}").toString();
+			b.append(", ");
+			
+		}
+	}
+	
 	//main method
 	public static void main(String[] args) {
 		
-	int[] arr = {10, 5, 6, 20, 24, 78, 90, 12, 1, 23};
+		int[] arr = {10, 5, 6, 20, 24, 78, 90, 12, 1, 23};
 		
-		System.out.println("Array before sorting: "+Arrays.toString(arr));
+		System.out.println("Array before sorting: "+printArray(arr));
 		
 		quickSort(arr, 0, arr.length - 1);
 		
-		System.out.println("Array after sorting: "+Arrays.toString(arr));
+		System.out.println("Array after sorting: "+printArray(arr));
 	}
 }

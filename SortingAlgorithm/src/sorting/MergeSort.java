@@ -13,10 +13,7 @@ public class MergeSort {
 		
 		while(i<=up1 && j<=up2) {
 			
-			if(arr[i] <= arr[j])
-				temp[k++] = arr[i++];
-			else 
-				temp[k++] = arr[j++];		
+			temp[k++] = arr[i] <= arr[j] ? arr[i++] : arr[j++];
 		}
 		
 		while(i<=up1)
@@ -51,7 +48,7 @@ public class MergeSort {
 	//main method
 	public static void main(String[] args) {
 		
-		int[] arr = {10, 5, 6, 20, 24, 78, 90, 12, 1, 23};
+		int[] arr = {10, 5, 6, 20, 24, 78, 90, 12, 1, 23, -20};
 		
 		System.out.println("Array before sorting: "+Arrays.toString(arr));
 		

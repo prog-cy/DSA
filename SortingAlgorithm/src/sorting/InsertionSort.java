@@ -23,7 +23,7 @@ public class InsertionSort {
 	//main method
 	public static void main(String[] args) {
 		
-		int[] arr = {10, 5, 6, 20, 24, 78, 90, 12, 1, 23};
+		int[] arr = {40, 30, 10, -45, 34, 560, 90, 100, 345, 300};
 		
 		System.out.println("Array before sorting: "+Arrays.toString(arr));
 		

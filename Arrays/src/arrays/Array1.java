@@ -2,7 +2,9 @@ package arrays;
 
 //static array declaration and initialization 
 
+
 public class Array1 {
+
 
 	public static void main(String[] args) {
 		

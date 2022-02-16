@@ -2,6 +2,7 @@ package priorityqueue;
 import java.util.ArrayList;
 
 class PriorityQueue2{
+	
 	ArrayList<Integer> heap;
 	
 	PriorityQueue2(){
@@ -16,6 +17,7 @@ class PriorityQueue2{
 		
 		int i = heap.size()-1;
 		
+		//this is logic for upheapify
 		while(i>1) {
 			
 			int parent = i/2;
@@ -39,6 +41,7 @@ class PriorityQueue2{
 		
 		int i = 1;
 		
+		//this is logic for downheapify
 		while(i<heap.size()/2) {
 			
 			int min = heap.get(2*i) < heap.get(2*i+1) ? 2*i : 2*i+1;

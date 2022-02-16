@@ -102,7 +102,7 @@ public class PriorityQueueDemo {
 		q1.delete();
 		
 		
-		System.out.println("Data present in priority queue");
+		System.out.println("Data present in priority queue after deleting");
 		q1.display();
 		
 		

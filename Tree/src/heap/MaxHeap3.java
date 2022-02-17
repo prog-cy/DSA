@@ -15,9 +15,9 @@ public class MaxHeap3 {
 		
 		int i = heap.size() - 1;
 		
-		while(i > 1) {
+		while(i > 0) {
 			
-			int parent = i/2;
+			int parent = (i-1)/2;
 			
 			if(heap.get(parent) < heap.get(i)) {
 				
@@ -33,15 +33,15 @@ public class MaxHeap3 {
 	//method to delete from the heap
 	static void delete() {
 		
-		System.out.println("\n"+heap.get(1) + " deleted");
-		heap.set(1, heap.get(heap.size() - 1));
+		System.out.println("\n"+heap.get(0) + " deleted");
+		heap.set(0, heap.get(heap.size() - 1));
 		heap.remove(heap.size() - 1);
 		
-		int i = 1;
+		int i = 0;
 		
-		while(i < heap.size()/2){
+		while(i < (heap.size()-1)/2){
 			
-			int max = heap.get(2*i) > heap.get(2*i + 1) ? 2*i : (2*i+1);
+			int max = heap.get(2*i+1) > heap.get(2*i + 2) ? 2*i+1: (2*i+2);
 			
 			if(heap.get(i) < heap.get(max)) {
 				int temp = heap.get(i);
@@ -57,7 +57,7 @@ public class MaxHeap3 {
 	//method to display the element of the heap
 	static void display() {
 		
-		for(int i = 1; i<heap.size(); i++)
+		for(int i = 0; i<heap.size(); i++)
 			System.out.print(heap.get(i)+" ");
 	}
 	
@@ -66,12 +66,11 @@ public class MaxHeap3 {
 		
 		if(index >= heap.size()) return 0;
 		
-		return 1 + height(2*index);
+		return 1 + height(2*index+1);
 	}
 	
 	//main method
 	public static void main(String[] args) {
-		heap.add(Integer.MIN_VALUE);
 		
 		insert(5);
 		insert(9);
@@ -85,7 +84,7 @@ public class MaxHeap3 {
 		insert(200);
 		insert(80);
 		
-		System.out.println("Height of the heap: "+height(1));
+		System.out.println("Height of the heap: "+height(0));
 		
 		System.out.print("Max Heap: ");
 		display();

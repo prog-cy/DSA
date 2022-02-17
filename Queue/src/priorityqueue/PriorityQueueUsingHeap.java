@@ -18,9 +18,9 @@ class PriorityQueue2{
 		int i = heap.size()-1;
 		
 		//this is logic for upheapify
-		while(i>1) {
+		while(i>0) {
 			
-			int parent = i/2;
+			int parent = (i-1)/2;
 			
 			if(heap.get(parent) > heap.get(i)) {
 				
@@ -36,15 +36,15 @@ class PriorityQueue2{
 	//method to delete element from priority queue
 	void delete() {
 		
-		heap.set(1, heap.get(heap.size()-1));
+		heap.set(0, heap.get(heap.size()-1));
 		heap.remove(heap.size()-1);
 		
-		int i = 1;
+		int i = 0;
 		
-		//this is logic for downheapify
-		while(i<heap.size()/2) {
+		//this is logic for down heapify
+		while(i<(heap.size()-1)/2) {
 			
-			int min = heap.get(2*i) < heap.get(2*i+1) ? 2*i : 2*i+1;
+			int min = heap.get(2*i+1) < heap.get(2*i+2) ? 2*i + 1 : 2*i+2;
 			
 			if(heap.get(i) > heap.get(min)) {
 				
@@ -64,12 +64,12 @@ class PriorityQueue2{
 		
 		if(heap.size()-1 == 0)return -1;
 		else
-			return heap.get(1);
+			return heap.get(0);
 	}
 	
 	void display() {
 		
-		for(int i = 1; i<heap.size(); i++)
+		for(int i = 0; i<heap.size(); i++)
 			System.out.print(heap.get(i)+" ");
 		System.out.println();
 	}
@@ -81,8 +81,7 @@ public class PriorityQueueUsingHeap {
 		
 		PriorityQueue2 pq = new PriorityQueue2();
 		
-		pq.add(Integer.MIN_VALUE);
-		
+		pq.add(100);
 		pq.add(20);
 		pq.add(5);
 		pq.add(50);
@@ -93,6 +92,10 @@ public class PriorityQueueUsingHeap {
 		pq.add(3);
 		
 		System.out.println("Highest Priority value: "+ pq.highestPriorityValue());
+		
+		pq.display();
+		
+		pq.delete();
 		
 		pq.display();
 		

@@ -4,8 +4,8 @@ package heap;
 
 public class MaxHeap1 {
 	
-	static int[] arr = new int[8]; //arr used to create heap
-	static int size = 1; //size variable used to keep track of the how many elements present in the array
+	static int[] arr = new int[8]; //array used to create heap
+	static int size = 0; //size variable used to keep track of the how many elements present in the array
 	
 	//method to insert data in the heap
 	static void insert(int key) {
@@ -14,9 +14,9 @@ public class MaxHeap1 {
 		
 		int i = size-1;
 		
-		while(i > 1) {
+		while(i > 0) {
 			
-			int parent = i/2;
+			int parent = (i-1)/2;
 			
 			if(arr[parent] < arr[i]) {
 				
@@ -32,7 +32,7 @@ public class MaxHeap1 {
 	
 	static void display() {
 		
-		for(int i = 1; i<size; i++) {
+		for(int i = 0; i<size; i++) {
 			
 			System.out.print(arr[i]+" ");
 		}
@@ -43,8 +43,8 @@ public class MaxHeap1 {
 		if(index >= size)return;
 		
 		System.out.print(arr[index] +" ");
-		preorder(2*index);
-		preorder((2*index) + 1);
+		preorder(2*index+1);
+		preorder(2*index+2);
 	}
 	
 	//main method
@@ -62,7 +62,7 @@ public class MaxHeap1 {
 		display();
 		
 		System.out.print("\nPreorder: ");
-		preorder(1);
+		preorder(0);
 	}
 
 }

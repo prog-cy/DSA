@@ -16,9 +16,9 @@ public class HeapSortWithoutHeapify {
 		
 		int i = heap.size() - 1;
 		
-		while(i > 1) {
+		while(i > 0) {
 			
-			int parent = i/2;
+			int parent = (i-1)/2;
 			
 			if(heap.get(parent) < heap.get(i)){
 				
@@ -34,14 +34,14 @@ public class HeapSortWithoutHeapify {
 	//method to delete the element from the heap
 	static int delete() {
 	
-		int del = heap.get(1);
-		heap.set(1, heap.get(heap.size() - 1));
+		int del = heap.get(0);
+		heap.set(0, heap.get(heap.size() - 1));
 		heap.remove(heap.size() - 1);
 		
-		int i = 1;
-		while(i<heap.size()/2) {
+		int i = 0;
+		while(i<(heap.size()-1)/2) {
 			
-            int max = heap.get(2*i) > heap.get(2*i + 1) ? 2*i : ((2*i)+1);
+            int max = heap.get(2*i+1) > heap.get(2*i + 2) ? 2*i+1: (2*i+2);
 			
             if(heap.get(i) < heap.get(max)) {
             	int temp = heap.get(i);
@@ -70,7 +70,7 @@ public class HeapSortWithoutHeapify {
 		
 		createHeap(arr);
 		int i = arr.length - 1;
-		while(heap.size() != 1){
+		while(i>=0){
 			
 			arr[i] = delete();
 			i--;
@@ -79,8 +79,6 @@ public class HeapSortWithoutHeapify {
 	
 	//main method
 	public static void main(String[] args) {
-		
-		heap.add(Integer.MIN_VALUE);
 		
         int[] arr = {10, 5, 6, 20, 24, -9, 78, 90,-10, 12, 1, 23};
         

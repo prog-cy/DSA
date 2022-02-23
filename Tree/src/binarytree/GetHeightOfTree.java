@@ -23,7 +23,7 @@ public class GetHeightOfTree {
 	//method to calculate the height of the tree
 	static int getHeight(Node root) {
 		
-		if(root == null) return 0;
+		if(root == null) return -1;
 		
 		return Math.max(getHeight(root.left), getHeight(root.right)) + 1;
 	}

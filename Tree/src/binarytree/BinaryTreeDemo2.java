@@ -26,6 +26,7 @@ public class BinaryTreeDemo2 {
 		System.out.println("Enter data: ");
 		int val = sc.nextInt();
 		
+		
 		if(val == -1) return null;
 		
 		Node node = new Node(val);

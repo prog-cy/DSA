@@ -10,7 +10,7 @@ public class ArrayImplementaionOfTree {
 	
 	static ArrayList<Integer> tree = new ArrayList<>();
 	
-	//preorder traversal
+	//Pre order traversal
 	static void preorder(int index) {
 		
 		if(index >= tree.size()) return;
@@ -20,7 +20,7 @@ public class ArrayImplementaionOfTree {
 		preorder((2*index) + 2);
 	}
 	
-	//inorder traversal
+	//in order traversal
 	static void inorder(int index) {
 		
 		if(index >= tree.size()) return;
@@ -30,7 +30,7 @@ public class ArrayImplementaionOfTree {
 		inorder((2*index) + 2);
 	}
 	
-	//postorder traversal
+	//post order traversal
 	static void postorder(int index) {
 		
 		if(index >= tree.size()) return;

@@ -12,7 +12,7 @@ class Node<T>{
 
 class BinaryTree<T> extends Node<T>{
 	
-	//this is constructor which calls the Node<T> class contructor 
+	//this is constructor which calls the Node<T> class constructor 
 	BinaryTree(T data){
 		super(data);
 	}
@@ -137,7 +137,7 @@ class BinaryTree<T> extends Node<T>{
 				 temp = stack.pop();
 			 }
 			 
-			 System.out.print(temp.data+" ");
+			 stack.push(temp);
 			 temp = temp.right;
 		 }
 	 }

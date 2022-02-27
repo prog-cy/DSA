@@ -18,12 +18,12 @@ public class IterativeLevelOrderTraversal {
 		
 		while(!q.isEmpty()) {
 			
-			Node<Integer> current = q.peek();
+			Node<Integer> current = q.remove();
 			
 			System.out.print(current.data+" ");
 			if(current.left != null) q.add(current.left);
 			if(current.right != null) q.add(current.right);
-			q.remove();
+
 		}
 		
 	}

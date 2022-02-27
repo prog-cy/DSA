@@ -12,6 +12,7 @@ public class IterativeDFSTraversal {
 	//method to implement preorder traversal iteratively
 	static void preorder(Node<Integer> root) {
 		
+		if(root == null)return;
 		
 		stack.push(root);
 		
@@ -29,6 +30,8 @@ public class IterativeDFSTraversal {
 	
 	//method to implement postorder traversal 
 	static void postorder(Node<Integer> root) {
+		
+		if(root == null) return;
 		
 		Node<Integer> q, temp;
 		q = temp = root;
@@ -54,6 +57,8 @@ public class IterativeDFSTraversal {
 	
 	//method to implement inorder
 	static void inorder(Node<Integer> root) {
+		
+		if(root == null)return;
 		
 		Node<Integer> temp = root;
 		

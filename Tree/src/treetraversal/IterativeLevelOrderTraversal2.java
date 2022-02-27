@@ -6,12 +6,10 @@ import java.util.Queue;
 //Iterative implementation of level order traversal
 // Level order traversal is a type of BFS (Breadth first search) traversal
 
-public class IterativeLevelOrderTraversal {
+public class IterativeLevelOrderTraversal2 {
 	
 	//method for traversing a tree in level order
 	static void levelOrder(Node<Integer> root) {
-		
-		if(root == null)return;
 		
 		Queue<Node<Integer>> q = new LinkedList<>();
 		q.add(root);

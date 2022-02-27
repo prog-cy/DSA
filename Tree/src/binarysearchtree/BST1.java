@@ -2,6 +2,7 @@ package binarysearchtree;
 
 public class BST1 {
 	
+	//Node of the Binary Tree
 	static class Node{
 		
 		int data;
@@ -81,7 +82,7 @@ public class BST1 {
 	//method to get the height of the tree
 	static int getHeight(Node root) {
 		
-		if(root == null) return 0;
+		if(root == null) return -1;
 		return Math.max(getHeight(root.left), getHeight(root.right)) + 1;
 	}
 	//method to count total number of leaf nodes in the tree

@@ -14,7 +14,16 @@ public class BST1 {
 		}
 	}
 	
-	//method to insert in BST 
+	static Node root;
+	
+	static {root = null;}
+	
+	//method to insert data in BST
+	static void insert(int data) {
+		
+		root = insert(root, data);
+	}
+
 	static Node insert(Node root, int data) {
 		
 		if(root == null) 
@@ -29,7 +38,13 @@ public class BST1 {
 		return root;
 	}
 	
+	
 	//method to search an element in BST
+	static boolean search(int key) {
+		
+		return search(root, key);
+	}
+	
 	static boolean search(Node root, int key) {
 		
 		if(root == null) return false;
@@ -111,7 +126,7 @@ public class BST1 {
 		
 		int h = getHeight(root);
 		
-		for(int i = 0; i<h; i++) {
+		for(int i = 0; i<=h; i++) {
 
 			printNodesAtLevel(root, i);
 			System.out.println();
@@ -120,15 +135,15 @@ public class BST1 {
 	//main method
 	public static void main(String[] args) {
 		
-		Node root = insert(null, 15);
-		insert(root, 5);
-		insert(root, 10);
-		insert(root, 25);
-		insert(root, 7);
-		insert(root, 90);
-		insert(root, 12);
-		insert(root, 78);
-		insert(root, 120);
+		insert(15);
+		insert(5);
+		insert(10);
+		insert(25);
+		insert(7);
+		insert(90);
+		insert(12);
+		insert(78);
+		insert(120);
 		
 		System.out.print("Inorder: ");
 		inorder(root);
@@ -137,7 +152,7 @@ public class BST1 {
 		levelorder(root);
 		
 		System.out.println();
-		if(search(root, 90))
+		if(search(90))
 			System.out.println(90+" is present");
 		else
 			System.out.println("Not present");

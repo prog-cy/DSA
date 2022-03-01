@@ -4,6 +4,8 @@ package binarysearchtree;
 
 
 public class BST2 {
+	
+	//Creating Node of binary tree.
 	static class Node{
 		
 		int data;
@@ -20,6 +22,7 @@ public class BST2 {
 	
 	static {root = null;}
 	
+	//Inserting data into binary tree
 	static void insert(int data) {
 		
 		root = insert(root, data);
@@ -36,6 +39,7 @@ public class BST2 {
 		return root;
 	}
 	
+	//Inorder traversal which prints the BST in ascending order
 	static void inorder(Node root) {
 		
 		if(root == null)return;
@@ -60,23 +64,58 @@ public class BST2 {
 		}
 	}
 	
-	static void levelOrder(Node root) {
+	//Deletion in BST
+	static void delete(int key) {
 		
-		if(root == null)return;
-		java.util.Queue<Node> q = new java.util.LinkedList<>();
-		
-		q.add(root);
-		
-		while(q.size()>0) {
-			
-			Node temp = q.remove();
-			
-			System.out.print(temp.data+" ");
-			
-			if(temp.left != null)q.add(temp.left);
-			if(temp.right != null)q.add(temp.right);
-		}
+		root = delete(root, key);
 	}
+	
+	static Node delete(Node root, int key) {
+		
+		if(root == null)return null;
+		
+		else if(root.data < key)
+			root.right = delete(root.right, key);
+		else if(root.data > key)
+			root.left = delete(root.left, key);
+		else {
+			
+			//Case-1: The node which we are deleting has no child
+			if(root.left == null && root.right == null)
+				root = null;
+			
+			//Case-2: The node which we are deleting has one child
+			else if(root.left != null)
+				root = root.left;
+			else if(root.right != null)
+				root = root.right;
+			//Case-3 The node which we are deleting has two child
+			else {
+				
+				root.data = findMin(root.right);
+				
+				root.right = delete(root.right, root.data);
+			}
+		}
+		
+		return root;
+		
+	}
+	
+	//Method to find Minimum Case-3 in deletion
+	static int findMin(Node root) {
+		
+		int min = root.data;
+		
+		while(root.left != null) {
+			min = root.left.data;
+			root = root.left;
+		}
+		
+		return min;
+		
+	}
+	
 	public static void main(String[] args) {
 		
 		insert(10);
@@ -91,8 +130,14 @@ public class BST2 {
 		System.out.println("Ascending order of BST: ");
 		inorder(root);
 		
-		System.out.println("\nLevel Order of BST: ");
-		levelOrder(root);
+		delete(5);
+		
+		System.out.println("\nAfter deleting 5 from BST: ");
+		inorder(root);
+		
+		delete(50);
+		System.out.println("\nAfter deleting 50 from BST: ");
+		inorder(root);
 	
 	}
 }

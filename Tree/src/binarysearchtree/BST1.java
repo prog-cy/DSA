@@ -29,7 +29,7 @@ public class BST1 {
 		if(root == null) 
 			root = new Node(data);
 			
-		else if(data <= root.data) 
+		else if(data < root.data) 
 			root.left = insert(root.left, data);
 		
 		else

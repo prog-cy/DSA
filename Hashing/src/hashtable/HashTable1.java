@@ -1,15 +1,20 @@
 package hashtable;
 
 //HashTable implementation using separate chaining collision method
-//All Operations here has average time complexity O(1).
+//All Operations of HashTable has average time complexity O(1).
+// There are three main operations of Hashtable are
+// put(key, value)
+// get(key)
+// remove(key)
+// These all operations has average time complexity O(1).
 
 public class HashTable1 {
 	
 	//This is singly linked list node for storing (key, value) in hashtable
 	private class HashNode{
 		
-		private Integer key;
-		private String value;
+		private Integer key; //key can be Generic
+		private String value; //value can be Generic
 		private HashNode next;
 		
 		public HashNode(Integer key, String value) {
@@ -172,6 +177,23 @@ public class HashTable1 {
 		}
 		return val;
 	}
+	
+	//Method checks that HashTable contains given key or not
+	public boolean containsKey(Integer key) {
+		
+		int index = hash(key);
+		
+		HashNode head = buckets[index];
+		
+		while(head != null) {
+			
+			if(head.key == key)
+				return true;
+			head = head.next;
+		}
+		
+		return false;
+	}
 	//main method
 	public static void main(String[] args) {
 		
@@ -196,8 +218,16 @@ public class HashTable1 {
 		System.out.println(table);
 		
 		System.out.println(table.size());
-
 		
+		table.remove(99);
 		
+		System.out.println(table);
+		
+		System.out.println(table.size());
+		
+		System.out.println(table.containsKey(99));
+		
+		System.out.println(table.containsKey(11));
+	
 	}
 }

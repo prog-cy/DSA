@@ -1,6 +1,7 @@
 package hashtable;
 
 //HashTable implementation using separate chaining collision method
+//All Operations here has average time complexity O(1).
 
 public class HashTable1 {
 	
@@ -114,6 +115,63 @@ public class HashTable1 {
 		}
 	}
 	
+	
+	//Method to get value from the HashTable by passing key
+	public String get(Integer key) {
+		
+		int index = hash(key);
+		
+		HashNode head = buckets[index];
+		
+		while(head != null) {
+			
+			if(head.key.equals(key))
+				return head.value;
+			head = head.next;
+		}
+		return null;
+	}
+	
+	//Method to remove the value from hashtable by passing the key
+	public String remove(Integer key) {
+		
+		int index = hash(key);
+		
+		HashNode head = buckets[index];
+		
+		HashNode temp = null;
+		
+		String val = "";
+		
+		//This if checks that if key is present at first of the Hashtable index
+		if(head.key == key) {
+			val = head.value;
+			size--;
+			buckets[index] = head.next;
+		}
+		
+		else {
+			
+			while(head != null) {
+				
+				temp = head;
+				
+				if(head.next.key == key) {
+					
+					val = head.next.value;
+					size--;
+					break;
+				}
+				
+				head = head.next;
+				
+			}
+			
+			temp.next = temp.next.next;
+			
+		}
+		return val;
+	}
 	//main method
 	public static void main(String[] args) {
 		
@@ -128,5 +186,18 @@ public class HashTable1 {
 		table.put(99, "Sachin");
 		
 		System.out.println(table);
+		
+		System.out.println(table.size());
+		
+		System.out.println(table.get(11));
+		
+		table.remove(31);
+		
+		System.out.println(table);
+		
+		System.out.println(table.size());
+
+		
+		
 	}
 }

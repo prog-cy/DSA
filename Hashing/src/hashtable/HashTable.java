@@ -22,9 +22,11 @@ public class HashTable <K, V> {
 	//Hash Function
 	private int hash(K key) {
 		
-		Integer changedKey = (int)key;
+		int h = key.hashCode(); 
 		
-		return changedKey % capacity;
+		h = h < 0 ? -h : h; //Hash value sometime gets negative that's why we are making it positive
+		
+		return h % capacity;
 	}
 	
 	private HashNode<K, V>[] buckets; //This the HashTable which stores address of head of every singly linked list in chain
@@ -54,8 +56,10 @@ public class HashTable <K, V> {
 		
 		while(head != null) {
 			
-			if(head.key == key)
+			if(head.key.equals(key)) {
 				head.value = value;
+				return;
+			}
 			head = head.next;
 		}
 		
@@ -109,7 +113,7 @@ public class HashTable <K, V> {
 		
 		while(head != null) {
 			
-			if(head.key == key)
+			if(head.key.equals(key))
 				return head.value;
 			head = head.next;
 		}
@@ -122,13 +126,15 @@ public class HashTable <K, V> {
 		
 		int index = hash(key);
 		
+		System.out.println(index);
+		
 		HashNode<K, V> head = buckets[index];
 		
 		HashNode<K, V> temp = null;
 		
 		V val = null;
 		
-		if(head.key == key) {
+		if(head.key.equals(key)) {
 			
 			val = head.value;
 			size--;
@@ -141,10 +147,12 @@ public class HashTable <K, V> {
 				
 				temp = head;
 				
-				if(head.next.key == key) {
+				if(head.next.key.equals(key)) {
 					
-					size--;
 					val = head.next.value;
+					size--;
+					break;
+					
 				}
 				
 				head = head.next;
@@ -165,7 +173,7 @@ public class HashTable <K, V> {
 		
 		while(head != null) {
 			
-			if(head.key == key)
+			if(head.key.equals(key))
 				return true;
 			head = head.next;
 		}

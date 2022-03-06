@@ -75,7 +75,7 @@ public class HashTableDemo {
 		
 		table4.put("45", "Rupesh");
 		table4.put("Rohan", "Rohan is very Integelligent Boy.");
-		table4.put("Rohan", "Rohan is not very good in health.");
+		table4.put("Rohan", "Rohan does not respect elders.");
 		
 		System.out.println(table4);
 		

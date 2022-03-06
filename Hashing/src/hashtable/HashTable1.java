@@ -2,10 +2,11 @@ package hashtable;
 
 //HashTable implementation using separate chaining collision method
 //All Operations of HashTable has average time complexity O(1).
-// There are three main operations of Hashtable are
+// There are three main operations of HashTable are
 // put(key, value)
 // get(key)
 // remove(key)
+// containsKey(key)
 // These all operations has average time complexity O(1).
 
 public class HashTable1 {
@@ -96,6 +97,7 @@ public class HashTable1 {
 	}
 	
 	//Method to display the HashTable
+	@Override
 	public String toString() {
 		
 		StringBuilder result = new StringBuilder();
@@ -113,6 +115,8 @@ public class HashTable1 {
 			}
 			
 			if(i == capacity-1) {
+				if(result.length() == 1)
+					return result.append("}").toString();
 				result.delete(result.lastIndexOf(","), result.length());
 				result.append("}");
 				return result.toString();
@@ -137,7 +141,7 @@ public class HashTable1 {
 		return null;
 	}
 	
-	//Method to remove the value from hashtable by passing the key
+	//Method to remove the value from hash table by passing the key
 	public String remove(Integer key) {
 		
 		int index = hash(key);
@@ -228,6 +232,5 @@ public class HashTable1 {
 		System.out.println(table.containsKey(99));
 		
 		System.out.println(table.containsKey(11));
-	
 	}
 }

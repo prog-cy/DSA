@@ -151,6 +151,21 @@ public class HashTable {
 		}
 	}
 	
+	public int size() {
+		
+		return size;
+	}
+	
+	public boolean isEmpty() {
+		
+		return size == 0;
+	}
+	
+	public int capacity() {
+		
+		return capacity;
+	}
+	
 	public static void main(String[] args){
 
 		HashTable table = new HashTable();
@@ -161,20 +176,20 @@ public class HashTable {
 		table.put(24, "Riya");
 		table.put(78, "Rohan");
 
-		System.out.println(table.size);
+		System.out.println(table.size());
 
 		table.put(25, "Saurabh");
 		table.put(55, "Ashish");
 		table.put(65, "Rajan");
 		table.put(89, "Ritik");
 
-		System.out.println(table.size);
+		System.out.println(table.size());
 		table.put(99, "Hemant");
 		table.put(56, "Vanita");
 
 		System.out.println(table);
 
-		System.out.println(table.size);
+		System.out.println(table.size());
 
 		table.put(56, "Neo");
 
@@ -182,7 +197,7 @@ public class HashTable {
 
 		table.put(90, "Vicky");
 
-		System.out.println(table.size);
+		System.out.println(table.size());
 
 		System.out.println(table.get(56));
 
@@ -190,7 +205,7 @@ public class HashTable {
 
 		table.remove(99);
 
-		System.out.println(table.size);
+		System.out.println(table.size());
 
 		System.out.println(table);
 
@@ -212,7 +227,7 @@ public class HashTable {
 
 		System.out.println(table.get(65));
 
-		System.out.println(table.size);
+		System.out.println(table.size());
 
 		table.remove(65);
 		table.remove(78);
@@ -221,7 +236,7 @@ public class HashTable {
 
 		System.out.println(table.get(89));
 
-		System.out.println(table.size);
+		System.out.println(table.size());
 
 		table.remove(101);
 		table.remove(11);
@@ -229,7 +244,7 @@ public class HashTable {
 
 		System.out.println(table);
 
-		System.out.println(table.size);
+		System.out.println(table.size());
 
 		table.put(34, "Aman");
 
@@ -237,7 +252,7 @@ public class HashTable {
 
 		System.out.println(table.get(34));
 
-		System.out.println(table.size);
+		System.out.println(table.size());
 		
 	}
 

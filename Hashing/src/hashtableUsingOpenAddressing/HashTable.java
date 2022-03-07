@@ -1,6 +1,8 @@
 package hashtableUsingOpenAddressing;
 
 //HashTable implementation using Linear probing
+// load factor in open addressing always lesser or equal to 1.
+// load factor = size / capacity.
 
 public class HashTable {
 	
@@ -62,12 +64,14 @@ public class HashTable {
 
 		hashtable[index] = info;
 	}
-
+	
+	//Method to get the hash value of the corresponding key
 	private int hash(Integer key){
 
 		return key % capacity;
 	}
-
+	
+	//Method to get the value corresponding to passed key
 	public String get(Integer key){
 
 		int index = hash(key);
@@ -90,7 +94,8 @@ public class HashTable {
 		}
 		return null;
 	}
-
+	
+	//Method to remove the value corresponding to passed key
 	public String remove(Integer key){
 
 		int index = hash(key);

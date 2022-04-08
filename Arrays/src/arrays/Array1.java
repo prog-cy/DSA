@@ -92,6 +92,13 @@ public class Array1 {
 		System.out.println("\nTraversing array: ");
 		for(int x : arr6)
 			System.out.print(x+" ");
+		
+		//Array of Objects this array works like python list
+		Object[] arr7 = {10, 10.4, 10.45, "Rupesh", 'K', true, false};
+		
+		System.out.println("\nArray like python List:");
+		for(Object elem : arr7)
+			System.out.print(elem+" ");
 	}
 
 }

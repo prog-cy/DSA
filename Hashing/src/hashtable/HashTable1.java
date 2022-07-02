@@ -11,7 +11,7 @@ package hashtable;
 
 public class HashTable1 {
 	
-	//This is singly linked list node for storing (key, value) in hashtable
+	//This is singly linked list node for storing (key, value) in hash table
 	private class HashNode{
 		
 		private Integer key; //key can be Generic

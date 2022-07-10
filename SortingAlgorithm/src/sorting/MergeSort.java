@@ -13,7 +13,7 @@ public class MergeSort {
 		
 		while(i<=mid && j<=up) {
 			
-			temp[k++] = arr[i] < arr[j] ? arr[i++] : arr[j++];
+			temp[k++] = arr[i] <= arr[j] ? arr[i++] : arr[j++];
 		}
 		
 		while(i<=mid)

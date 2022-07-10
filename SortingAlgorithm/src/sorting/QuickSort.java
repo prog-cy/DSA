@@ -21,18 +21,25 @@ public class QuickSort {
 	//method for partitioning
 	static int partition(int[] arr, int low, int up) {
 		
-		int i = low+1;
-		int j = up;
 		int pivot = arr[low];
 		
+		int i = low+1, j = up;
+		
+		//This i<=j condition handles when there are only two elements in the array.
 		while(i <= j) {
 			
-			while(arr[i]<pivot && i<up)
+			//This while loop takes care of all three corner cases
+			//Case-1: When all the elements in the array are equal
+			//Case-2: When all the elements are smaller than the pivot.
+			//Case-3: When some elements are smaller and some elements are equal.
+			while(i<=up && arr[i]<=pivot) 
 				i++;
 			
+			//This is for when all elements are greater than pivot.
 			while(arr[j]>pivot)
 				j--;
 			
+			//This swapping is for when ith element is greater and jth is smaller.
 			if(i<j) {
 				
 				int temp = arr[i];
@@ -41,11 +48,11 @@ public class QuickSort {
 				i++;
 				j--;
 			}
-			else
-				i++;
+
 			
 		}
 		
+		//These two lines are responsible for putting the pivot to its right index.
 		arr[low] = arr[j];
 		arr[j] = pivot;
 		
@@ -74,7 +81,7 @@ public class QuickSort {
 	//main method
 	public static void main(String[] args) {
 		
-		int[] arr = {10, 5, 6, 20, 24, 78, 90, 12, 1, 23};
+		int[] arr = {7, 3, 8, 6, 12, 10, 9, 8, 7, 6, 3};
 		
 		System.out.println("Array before sorting: "+printArray(arr));
 		

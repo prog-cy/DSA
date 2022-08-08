@@ -54,7 +54,7 @@ public class BST1 {
 		
 	}
 	
-	//Inorder traversal
+	//In order traversal
 	static void inorder(Node root) {
 		
 		if(root == null) return;
